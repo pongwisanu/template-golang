@@ -15,8 +15,8 @@ func main() {
 	initTimeZone()
 	initConfig()
 	// db := initDatabase()
-
-	cusRepo := repository.NewCustomerRepositoryConn()
+	// cusRepo := repository.NewCustomerRepositoryDb(db)
+	cusRepo := repository.NewCustomerRepositoryMock()
 	cusService := services.NewCustomerService(cusRepo)
 	cusHandle := handlers.NewCustomerHandler(cusService)
 
